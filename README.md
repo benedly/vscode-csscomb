@@ -1,6 +1,6 @@
 # vscode-csscomb
 
-> VS Code plugin for [CSScomb](http://csscomb.com/) — CSS coding style formatter.
+> VS Code plugin for [CSScomb](https://github.com/csscomb/csscomb.js/) — CSS coding style formatter.
 ## :warning: This plugin is archived
 
 The main package ([`csscomb`](https://github.com/csscomb/csscomb.js)) has no maintainer and does not develop. In this regard, the development of the plugin does not make sense.
