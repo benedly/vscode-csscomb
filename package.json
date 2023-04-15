@@ -1,8 +1,8 @@
 {
   "name": "vscode-csscomb",
-  "displayName": "vscode csscomb package",
+  "displayName": "csscomb package",
   "description": "Coding style formatter(compress,compact,expand) for CSS, LESS, SCSS, SASS Using csscomb",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "icon": "icon.png",
   "publisher": "benedly",
   "author": {
