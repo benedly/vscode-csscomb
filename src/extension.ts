@@ -1,26 +1,28 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as fs from 'fs';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+const csscomb = require('csscomb');
+const compress = require('./compress.json');
+const compact = require('./compact.json');
+const expand = require('./expand.json');
+
+const execute = (config: object) => () => {
+  // vscode.window.showInformationMessage(type);
+  if (!vscode.window.activeTextEditor) {
+    return null;
+  }
+
+  let f = vscode.window.activeTextEditor.document.uri.fsPath;
+  const comb = new csscomb(config);
+  comb.processPath(f);
+  vscode.window.showInformationMessage('success csscomb');
+};
+
 export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "csscomb" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('csscomb.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from csscomb!');
-	});
-
-	context.subscriptions.push(disposable);
+  context.subscriptions.push(vscode.commands.registerTextEditorCommand('csscomb.compress', execute(compress)));
+  context.subscriptions.push(vscode.commands.registerTextEditorCommand('csscomb.compact', execute(compact)));
+  context.subscriptions.push(vscode.commands.registerTextEditorCommand('csscomb.expand', execute(expand)));
 }
 
 // This method is called when your extension is deactivated
-export function deactivate() {}
+// export function deactivate() {}

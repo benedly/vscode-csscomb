@@ -1,6 +1,6 @@
-# csscomb README
+# vscode-csscomb
 
-This is the README for your extension "csscomb". After writing up a brief description, we recommend including the following sections.
+> VS Code plugin for [CSScomb](http://csscomb.com/) — CSS coding style formatter.
 
 ## Features
 

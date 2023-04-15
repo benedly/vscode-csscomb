@@ -1,25 +1,75 @@
 {
-  "name": "csscomb",
-  "displayName": "csscomb",
-  "description": "",
+  "name": "vscode-csscomb",
+  "displayName": "vscode csscomb package",
+  "description": "Coding style formatter(compress,compact,expand) for CSS, LESS, SCSS, SASS Using csscomb",
   "version": "0.0.1",
+  "icon": "icon.png",
+  "publisher": "benedly",
+  "author": {
+    "name": "benedly"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.77.0"
   },
   "repository": {
-		"type": "git",
-		"url": "https://github.com/benedly/vscode-csscomb.git"
-	},
+    "type": "git",
+    "url": "https://github.com/benedly/vscode-csscomb.git"
+  },
   "categories": [
-    "Other"
+    "Formatters"
   ],
-  "activationEvents": [],
+  "keywords": [
+    "CSScomb",
+    "CSS",
+    "Less",
+    "Sass",
+    "SCSS"
+  ],
+  "activationEvents": [
+    "onCommand:csscomb.compress",
+    "onCommand:csscomb.compact",
+    "onCommand:csscomb.expand",
+    "onLanguage:css",
+    "onLanguage:less",
+    "onLanguage:sass",
+    "onLanguage:sass-indented",
+    "onLanguage:scss"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "csscomb.helloWorld",
-        "title": "Hello World"
+        "command": "csscomb.compress",
+        "title": "CSSComb: Format Style Compress"
+      },
+      {
+        "command": "csscomb.compact",
+        "title": "CSSComb: Format Style Compact"
+      },
+      {
+        "command": "csscomb.expand",
+        "title": "CSSComb: Format Style Expand"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "csscomb.compress",
+        "key": "alt+\\ opt+\\",
+        "mac": "alt+\\ alt+\\",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "csscomb.compact",
+        "key": "alt+\\ alt+[",
+        "mac": "alt+\\ alt+[",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "csscomb.expand",
+        "key": "alt+\\ alt+]",
+        "mac": "alt+\\ alt+]",
+        "when": "editorTextFocus"
       }
     ]
   },
@@ -32,16 +82,19 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.77.0",
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.77.0",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
+    "@vscode/test-electron": "^2.3.0",
     "eslint": "^8.36.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
-    "typescript": "^4.9.5",
-    "@vscode/test-electron": "^2.3.0"
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "csscomb": "^4.3.0"
   }
 }
