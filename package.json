@@ -2,7 +2,7 @@
   "name": "csscomb-formatter",
   "displayName": "csscomb formatter",
   "description": "Coding style formatter(compress,compact,expand) for CSS, LESS, SCSS, SASS Using csscomb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "icon": "icon.png",
   "publisher": "benedly",
   "author": {

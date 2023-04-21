@@ -9,3 +9,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Initial release 
 
 ## [0.1.0] - 2023-04-16
+
+## [0.1.2] - 2023-04-16
+
+### Fixed
+- Indent Uesing Spaces 2.
